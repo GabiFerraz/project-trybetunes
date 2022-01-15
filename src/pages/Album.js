@@ -33,8 +33,13 @@ class Album extends React.Component {
     });
   }
 
+  // teste = () => {
+  //   console.log('Ruy lindão!!!');
+  // } // callback pra passar por props lá embaixo.
+
   render() {
     const { listMusic, albumName, artistBandName, albumImage } = this.state;
+
     return (
       <>
         <div data-testid="page-album" />
@@ -50,6 +55,9 @@ class Album extends React.Component {
               key={ trackId }
               trackName={ trackName }
               previewUrl={ previewUrl }
+              listMusic={ listMusic }
+              trackId={ trackId }
+              // callback={ this.teste } // primeiro nome é a prop, o que vai dentro é o valor da prop.
             />
           ))}
         </section>
