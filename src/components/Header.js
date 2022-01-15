@@ -31,6 +31,7 @@ class Header extends React.Component {
 
   render() {
     const { loading, userName } = this.state;
+
     if (loading) {
       return <Carregando />;
     }

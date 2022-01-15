@@ -51,6 +51,7 @@ class Search extends React.Component {
       nameArtist,
       returnArtist,
       exhibitionAlbum } = this.state;
+
     if (loading) {
       return <Carregando />;
     }

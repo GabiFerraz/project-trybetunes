@@ -39,6 +39,7 @@ class Login extends React.Component {
 
   render() {
     const { isButtonDisabled, valueName, loading, redirectSearch } = this.state;
+
     if (loading) {
       return <Carregando />;
     }
