@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
-import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   constructor() {
@@ -14,9 +13,6 @@ class Album extends React.Component {
       albumName: '',
       artistBandName: '',
       albumImage: '',
-      favoriteMusics: [],
-      loading: false,
-      // checked: false,
     };
   }
 
@@ -27,26 +23,13 @@ class Album extends React.Component {
 
     getMusics(id).then((musics) => {
       const returnMusics = musics;
+      console.log(returnMusics);
       const songs = returnMusics.filter((type) => type.kind === 'song');
       this.setState({
         albumName: returnMusics[0].collectionName,
         artistBandName: returnMusics[0].artistName,
         albumImage: returnMusics[0].artworkUrl100,
         listMusic: songs,
-      });
-    });
-
-    this.recoverMusicList();
-  }
-
-  recoverMusicList = () => {
-    this.setState({
-      loading: true,
-    });
-    getFavoriteSongs().then((listFavorites) => {
-      this.setState({
-        favoriteMusics: listFavorites,
-        loading: false,
       });
     });
   }
@@ -60,9 +43,7 @@ class Album extends React.Component {
       listMusic,
       albumName,
       artistBandName,
-      albumImage,
-      favoriteMusics,
-      loading } = this.state;
+      albumImage } = this.state;
 
     return (
       <>
@@ -81,7 +62,6 @@ class Album extends React.Component {
               previewUrl={ previewUrl }
               listMusic={ listMusic }
               trackId={ trackId }
-              // checked={ checked }
               // callback={ this.teste } // primeiro nome é a prop, o que vai dentro é o valor da prop.
             />
           ))}

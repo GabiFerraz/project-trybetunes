@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Carregando from './Carregando';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -9,7 +9,13 @@ class MusicCard extends React.Component {
 
     this.state = {
       loading: false,
+      // favoriteMusics: [],
+      isFavorite: false,
     };
+  }
+
+  componentDidMount() {
+    this.recoverMusicList();
   }
 
   handleClick = ({ target }) => {
@@ -21,13 +27,29 @@ class MusicCard extends React.Component {
     addSong(...eachSong).then(() => {
       this.setState({
         loading: false,
+        isFavorite: true,
+      });
+    });
+  }
+
+  recoverMusicList = () => {
+    const { trackId } = this.props;
+    this.setState({
+      loading: true,
+    });
+    getFavoriteSongs().then((listFavorites) => {
+      // console.log(listFavorites);
+      this.setState({
+        // favoriteMusics: listFavorites,
+        loading: false,
+        isFavorite: listFavorites.some((music) => music.trackId === trackId),
       });
     });
   }
 
   render() {
     const { trackName, previewUrl, trackId } = this.props;
-    const { loading } = this.state;
+    const { loading, isFavorite } = this.state;
 
     return (
       <div key={ trackId }>
@@ -47,7 +69,7 @@ class MusicCard extends React.Component {
             name={ trackId }
             data-testid={ `checkbox-music-${trackId}` }
             onClick={ this.handleClick }
-            // checked={ checked }
+            checked={ isFavorite }
             // onClick={ callback } essa é a prop passada lá no arquivo Album, preciso passar o nome callback na linha 29.
           />
         </label>
