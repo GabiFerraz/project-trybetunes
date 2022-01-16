@@ -9,7 +9,6 @@ class MusicCard extends React.Component {
 
     this.state = {
       loading: false,
-      // favoriteMusics: [],
       isFavorite: false,
     };
   }
@@ -49,16 +48,11 @@ class MusicCard extends React.Component {
     });
     getFavoriteSongs().then((listFavorites) => {
       this.setState({
-        // favoriteMusics: listFavorites,
         loading: false,
         isFavorite: listFavorites.some((music) => music.trackId === trackId),
       });
     });
   }
-
-  // deleteFavorite = () => {
-  //   removeSong();
-  // }
 
   render() {
     const { trackName, previewUrl, trackId } = this.props;

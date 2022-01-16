@@ -27,3 +27,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+// requisito 1: importei o BrowserRouter, o Switch e o Route. Depois, criei a pasta pages e criei todos os componentes pedidos no requisito. Aí aqui eu criei as rotas de cada um. O BrowserRouter é o pai de todos, usei o Switch para renderizar exclusivamente uma rota, depois eu fiz um Route para cada página, usei o exact para abrir exatamente a rota que eu estou passando e não ter problemas pq todas as rotas começam com o / no path, e o component que leva pro componente que eu quero. Para quando a página não for encontrada, eu coloco no path o *.
