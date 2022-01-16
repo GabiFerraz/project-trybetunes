@@ -47,6 +47,7 @@ class MusicCard extends React.Component {
             name={ trackId }
             data-testid={ `checkbox-music-${trackId}` }
             onClick={ this.handleClick }
+            // checked={ checked }
             // onClick={ callback } essa é a prop passada lá no arquivo Album, preciso passar o nome callback na linha 29.
           />
         </label>
