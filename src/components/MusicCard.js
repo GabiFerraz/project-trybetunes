@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Carregando from './Carregando';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -19,17 +19,27 @@ class MusicCard extends React.Component {
   }
 
   handleClick = ({ target }) => {
+    const { isFavorite } = this.state;
     this.setState({
       loading: true,
     });
     const { listMusic } = this.props;
     const eachSong = listMusic.filter((music) => String(music.trackId) === target.name); // meu target.name é o meu trackId só que em forma de string, por isso precisei transformar o meu trackId vindo da music em string pq quando ele vem da API ele é um número.
-    addSong(...eachSong).then(() => {
-      this.setState({
-        loading: false,
-        isFavorite: true,
+    if (!isFavorite) {
+      addSong(...eachSong).then(() => {
+        this.setState({
+          loading: false,
+          isFavorite: true,
+        });
       });
-    });
+    } else {
+      removeSong(...eachSong).then(() => {
+        this.setState({
+          loading: false,
+          isFavorite: false,
+        });
+      });
+    }
   }
 
   recoverMusicList = () => {
@@ -38,7 +48,6 @@ class MusicCard extends React.Component {
       loading: true,
     });
     getFavoriteSongs().then((listFavorites) => {
-      // console.log(listFavorites);
       this.setState({
         // favoriteMusics: listFavorites,
         loading: false,
@@ -46,6 +55,10 @@ class MusicCard extends React.Component {
       });
     });
   }
+
+  // deleteFavorite = () => {
+  //   removeSong();
+  // }
 
   render() {
     const { trackName, previewUrl, trackId } = this.props;
