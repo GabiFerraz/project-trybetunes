@@ -1,0 +1,26 @@
+.search form {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 200px;
+  justify-content: center;
+}
+
+.search input {
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.search button {
+  background: #003be5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  height: 40px;
+  width: 100px;
+}

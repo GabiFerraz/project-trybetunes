@@ -58,7 +58,7 @@ class Search extends React.Component {
     }
 
     return (
-      <section data-testid="page-search">
+      <section data-testid="page-search" className={ style.search }>
         <Header corDestaqueHeader="search" />
         <form>
           <label htmlFor="bandArtist">
