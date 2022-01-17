@@ -1,37 +1,121 @@
-.login {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 550px;
-  justify-content: space-evenly;
+@media only screen and ( max-width : 600px ) {
+
+  .login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    /* justify-content: space-evenly; */
+  }
+
+  .login img {
+    margin-bottom: 20vh;
+    width: 200px;
+  }
+
+  .login form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .login input {
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+    height: 6vh;
+    padding-left: 10px;
+    width: 70vw;
+  }
+
+  .login button {
+    background: #003be5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    height: 5vh;
+    width: 70vw;
+  }
+}
+
+@media only screen and ( min-width : 600px ) {
+
+  .login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .login img {
+    margin-bottom: 25vh;
+    width: 200px;
+  }
+
+  .login form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .login input {
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+    height: 6vh;
+    padding-left: 10px;
+    width: 50vh;
+  }
+
+  .login button {
+    background: #003be5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    height: 5vh;
+    width: 50vh;
+  }
+}
+
+/* .login {
+align-items: center;
+display: flex;
+flex-direction: column;
+height: 550px;
+justify-content: space-evenly;
 }
 
 .login img {
-  width: 200px;
+width: 200px;
 }
 
 .login form {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+gap: 20px;
+justify-content: center;
 }
 
 .login input {
-  border: 1px solid rgba(0, 0, 0, 0.267);
-  border-radius: 5px;
-  height: 40px;
-  padding-left: 10px;
-  width: 400px;
+border: 1px solid rgba(0, 0, 0, 0.267);
+border-radius: 5px;
+height: 40px;
+padding-left: 10px;
+width: 400px;
 }
 
 .login button {
-  background: #003be5;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  height: 30px;
-  width: 400px;
-}
+background: #003be5;
+border: none;
+border-radius: 5px;
+color: white;
+cursor: pointer;
+height: 30px;
+width: 400px;
+} */
