@@ -58,7 +58,7 @@ class Search extends React.Component {
 
     return (
       <section data-testid="page-search">
-        <Header />
+        <Header corDestaqueHeader="search" />
         <form>
           <label htmlFor="bandArtist">
             <input

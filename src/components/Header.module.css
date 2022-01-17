@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 895px;
+}
+
+.header .firstSection {
+  align-items: center;
+  background: #023031;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header .imgLogo {
+  height: 50px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  width: 80px;
+}
+
+.header .secondSection {
+  align-items: center;
+  background-color: #fafafa;
+  border-radius: 15px;
+  display: flex;
+  gap: 10px;
+  height: 30px;
+  justify-content: stretch;
+  margin-right: 15px;
+  min-width: 180px;
+}
+
+.header .secondSection .carinhaLogo {
+  height: 20px;
+  margin-left: 10px;
+  width: 20px;
+}
+
+.header p {
+  align-self: center;
+  flex: 1;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.header .thirdSection {
+  align-items: center;
+  background: #036b52;
+  display: flex;
+  height: 60px;
+  width: 100%;
+}
+
+.header a {
+  border: 1px solid #023031;
+  color: white;
+  line-height: 60px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.4s;
+  width: 33.33%;
+}
+
+.header a:hover {
+  background-color: #036b5344;
+  color: white;
+  font-size: 20px;
+}
+
+.header .highlightsWhite {
+  background: #f0f2f5;
+  border: 1px solid white;
+  color: #2fc18c;
+}
