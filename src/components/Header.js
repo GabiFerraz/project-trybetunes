@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { getUser } from '../services/userAPI';
 import Carregando from './Carregando';
 import style from './Header.module.css';
@@ -86,6 +87,8 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = { corDestaqueHeader: PropTypes.string.isRequired };
 
 export default Header;
 

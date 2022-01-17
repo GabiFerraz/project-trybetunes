@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Carregando from '../components/Carregando';
+import style from './Search.module.css';
 
 const MINCHARACTERS = 2;
 
