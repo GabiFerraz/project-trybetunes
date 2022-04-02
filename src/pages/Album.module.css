@@ -1,0 +1,19 @@
+.headerMusicCard {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerMusicCard img {
+  padding: 10px 0;
+  width: 150px;
+}
+
+.headerMusicCard h5 {
+  font-size: 1.3rem;
+}
+
+.headerMusicCard h6 {
+  font-size: 1.1rem;
+  padding: 10px 0 25px;
+}

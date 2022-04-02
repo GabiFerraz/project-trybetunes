@@ -1,0 +1,35 @@
+.musicCard {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.musicCard h6 {
+  font-size: 1rem;
+}
+
+/* .musicCard input {
+  display: none;
+  height: 0.1px;
+  opacity: 0;
+  width: 0.1px;
+} */
+
+.musicCard button {
+  background-color: transparent;
+  border: none;
+}
+
+.musicCard .heart {
+  cursor: pointer;
+  transform: translateX(-20px);
+}
+
+.musicCard .heartRed {
+  color: red;
+  cursor: pointer;
+  transform: translateX(-20px);
+}

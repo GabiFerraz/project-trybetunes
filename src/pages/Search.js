@@ -81,20 +81,30 @@ class Search extends React.Component {
           </button>
         </form>
         <section>
-          {nameArtist && `Resultado de álbuns de: ${nameArtist}`}
-          {
-            exhibitionAlbum
-              ? (returnArtist.map((artist) => (
-                <Link
-                  key={ artist.collectionId }
-                  data-testid={ `link-to-album-${artist.collectionId}` }
-                  to={ `/album/${artist.collectionId}` }
-                >
-                  <div>{artist.collectionName}</div>
-                </Link>
-              )))
-              : <p>Nenhum álbum foi encontrado</p>
-          }
+          {nameArtist
+          && (
+            <h5 className={ style.titleAlbuns }>
+              { `Resultado de álbuns de: ${nameArtist}` }
+            </h5>
+          )}
+          <section className={ style.albunsDad }>
+            {
+              exhibitionAlbum
+                ? (returnArtist.map((artist) => (
+                  <Link
+                    key={ artist.collectionId }
+                    data-testid={ `link-to-album-${artist.collectionId}` }
+                    to={ `/album/${artist.collectionId}` }
+                  >
+                    <div className={ style.album }>
+                      <img src={ artist.artworkUrl100 } alt="Imagem do Álbum" />
+                      <span className={ style.tagA }>{artist.collectionName}</span>
+                    </div>
+                  </Link>
+                )))
+                : <p>Nenhum álbum foi encontrado</p>
+            }
+          </section>
         </section>
       </section>
     );
@@ -102,3 +112,6 @@ class Search extends React.Component {
 }
 
 export default Search;
+
+// requisito 5: criei um form, coloquei uma label com um input para que o usuário possa digitar o nome do artista ou da banda e criei um botão de pesquisar que só deve ser habilitado caso o nome do artista tenha 2 ou mais caracteres (fiz uma função para isso - activateButton, onde o estado valueName vai receber o valor digitado no input e o estado do botão desabilitado vai ser habilitado quando atingir os caracteres mínimos).
+// requisito 6:  Fiz a função do click do botão onde eu coloco o carregando na tela, chamo a minha API passando como parâmetro o nome do artista digitado no imput (valueName), uso o .then para esperar o retorno da api e passo como parâmetro o retorno esperado, aí mudo os meus estados para que o nameArtist receba o valor digitado no input, o input seja limpo, o carregando suma da tela, ele retorne todos os álbuns do artista esperado, e exiba na tela se existir um resultado, se não existir, como na condicional do return, vai aparecer a informação que nnenhum álbum foi encontrado.
